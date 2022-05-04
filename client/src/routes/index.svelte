@@ -11,6 +11,7 @@ let character = {
   status: "loading",
   woodcutting:0,
   fishing:0,
+  gold:0,
 }
 
     setTimeout(async () => {
@@ -52,7 +53,7 @@ let character = {
     </div>
 
     <div class="money">
-        10000gp
+        {character.gold}
     </div>
 
     <div class="idunno">

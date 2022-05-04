@@ -11,6 +11,7 @@ let character = {
   status: "alive",
   woodcutting:1,
   fishing:1,
+  gold:100,
 }
 
 const handler = (request: Request): Response => {
