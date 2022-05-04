@@ -15,7 +15,7 @@ let character = {
 
     setTimeout(async () => {
         let tmp =  await fetch('http://localhost:8080/character').then(res => res.json())
-        character = tmp
+        character = await tmp
     },5000)
 
 
@@ -24,6 +24,7 @@ let character = {
 </script>
 <svelte:head>
     <title>MMO</title>
+    
 </svelte:head>
 
 <main>
@@ -37,12 +38,12 @@ let character = {
 
     <div class="character">
         <ul>
-            <li>{character.name}</li>
-            <li> {character.health}</li>
-            <li> {character.mana}</li>
-            <li>{character.status}</li>
-            <li>{character.fishing}</li>
-            <li>{character.woodcutting}</li>
+            <li>Name: {character.name}</li>
+            <li>Health: {character.health}</li>
+            <li>Mana: {character.mana}</li>
+            <li>Status: {character.status}</li>
+            <li>Fishing: {character.fishing}</li>
+            <li>Woodcutting:{character.woodcutting}</li>
             {#if character.name == "loading"}
                 waiting 5 seconds to signify a game tick the loading
             {/if}
